@@ -1,8 +1,8 @@
-﻿@model MovieManagement.Models.ViewModels.MovieViewModel
+﻿@model MovieManagement.Models.Entities.Movie
 
 <h1>Ajouter un film</h1>
 
-<form asp-action="Add" method="post">
+<form asp-action="Edit" method="post">
     <input type="hidden" asp-for="Id" />
     <div class="form-group">
         <label asp-for="Name">Nom du film</label>

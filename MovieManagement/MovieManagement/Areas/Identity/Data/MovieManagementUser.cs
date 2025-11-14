@@ -9,7 +9,7 @@ namespace MovieManagement.Areas.Identity.Data;
 // Add profile data for application users by adding properties to the MovieManagementUser class
 public class MovieManagementUser : IdentityUser
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public string? FirstName { get; set; }
+    public string? LastName { get; set; }
 }
 
