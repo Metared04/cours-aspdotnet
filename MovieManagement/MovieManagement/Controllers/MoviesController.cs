@@ -9,7 +9,7 @@ namespace MovieManagement.Controllers
     {
         private readonly IMovieService _movieService;
 
-        public MoviesController(MovieService movieService)
+        public MoviesController(IMovieService movieService)
         {
             _movieService = movieService;
         }
@@ -20,7 +20,7 @@ namespace MovieManagement.Controllers
         }
 
         [HttpGet]
-        //[Authorize]
+        [Authorize]
         public IActionResult Add()
         {
             return View();
