@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MovieManagement.Data;
 using MovieManagement.Services;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddDbContext<AppDBContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+builder.Services.AddDefaultIdentity<MovieManagementUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<MovieManagementContext>();
 
 builder.Services.AddScoped<MovieService>();
 
