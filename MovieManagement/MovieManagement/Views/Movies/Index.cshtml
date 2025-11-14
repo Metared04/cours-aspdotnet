@@ -1,0 +1,38 @@
+﻿    
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Film enregistré</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nom film</th>
+            <th>Description</th>
+            <th>Date de sortie</th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach(var movie in Model)
+    {
+        <tr>
+            <td>@movie.Name</td>
+            <td>@movie.Description</td>
+            <td>@movie.CreatedDate</td>
+            <td>
+                <a class="btn btn-primary" asp-controller="Movies" asp-action="Edit" asp-route-id="@movie.Id">Modifier</a>
+                <a class="btn btn-danger"
+                   asp-controller="Movies"
+                   asp-action="Delete"
+                   asp-route-id="@movie.Id"
+                   onclick="return confirm('Supprimer ce film ?');">Supprimer</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" asp-action="Add">Ajouter</a>

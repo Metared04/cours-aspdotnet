@@ -1,0 +1,25 @@
+﻿@model MovieManagement.Models.ViewModels.MovieViewModel
+
+<h1>Ajouter un film</h1>
+
+<form asp-action="Add" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Name">Nom du film</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description">Resume du film</label>
+        <input asp-for="Description" class="form-control" />
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreatedDate">Date de sortie</label>
+        <input asp-for="CreatedDate" class="form-control" type="datetime-local" />
+        <span asp-validation-for="CreatedDate" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Sauvegarder</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>
